@@ -55,11 +55,13 @@ CREATE TABLE files (
     file_id                  NUMBER,
     file_name                VARCHAR2(100),
     file_type_id             NUMBER,
+    first_column             VARCHAR2(100),
     header_applicable        VARCHAR2(1),
-    header_identifier_chars  VARCHAR2(10),
+    header_identifier_chars  VARCHAR2(50),
     trailer_applicable       VARCHAR2(1),
-    trailer_identifier_chars VARCHAR2(10),
+    trailer_identifier_chars VARCHAR2(50),
     file_directory           VARCHAR2(100),
+    ext_table                VARCHAR(100),
     stage_table              VARCHAR(100),
     error_table              VARCHAR2(100)
 );
@@ -105,7 +107,8 @@ CREATE TABLE employment_ext
    ACCESS PARAMETERS
      (      RECORDS DELIMITED BY NEWLINE
             FIELDS CSV WITHOUT EMBEDDED 
-            TERMINATED BY ',' 
+            TERMINATED BY ','
+            OPTIONALLY ENCLOSED BY '"'
             MISSING FIELD VALUES ARE NULL 
             REJECT ROWS WITH ALL NULL FIELDS  
      )   

@@ -22,7 +22,8 @@ CREATE TABLE employment_ext
    ACCESS PARAMETERS
      (      RECORDS DELIMITED BY NEWLINE
             FIELDS CSV WITHOUT EMBEDDED 
-            TERMINATED BY ',' 
+            TERMINATED BY ','
+            OPTIONALLY ENCLOSED BY '"'
             MISSING FIELD VALUES ARE NULL 
             REJECT ROWS WITH ALL NULL FIELDS  
      )   
