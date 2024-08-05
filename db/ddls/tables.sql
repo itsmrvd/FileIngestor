@@ -118,9 +118,10 @@ CREATE TABLE employment_ext
 
 drop table employment_stg;
 CREATE TABLE employment_stg (
---    file_ingestion_id NUMBER,
---    record_sequence   NUMBER,
---    insert_time       TIMESTAMP,
+    file_ingestion_id NUMBER,
+    record_sequence   NUMBER,
+    record_type       NUMBER,
+    insert_time       TIMESTAMP,
     series_reference  VARCHAR2(4000),
     period_1          VARCHAR2(4000),
     data_value        VARCHAR2(4000),
